@@ -244,7 +244,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-11-02 16:32:48" itemprop="dateModified" datetime="2024-11-02T16:32:48+08:00">2024-11-02</time>
+      <time title="修改时间：2024-11-02 16:34:27" itemprop="dateModified" datetime="2024-11-02T16:34:27+08:00">2024-11-02</time>
     </span>
 
   
@@ -257,13 +257,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="矩阵的LU分解"><a href="#矩阵的LU分解" class="headerlink" title="矩阵的LU分解"></a><strong>矩阵的LU分解</strong></h1><p>A^2  </p>
-<p>$$AX&#x3D;B$$</p>
-<p>$$LUX&#x3D;B\(GETRF)$$</p>
-<p>$$UX&#x3D;L^{-1}B&#x3D;Y\(TRSM)$$</p>
-<p>$$X&#x3D;U^{-1}(L^{-1}B)\(TRSM)$$</p>
+          <h1 id="矩阵的LU分解"><a href="#矩阵的LU分解" class="headerlink" title="矩阵的LU分解"></a><strong>矩阵的LU分解</strong></h1><p> $$AX&#x3D;B$$<br> $$LUX&#x3D;B\(GETRF)$$<br> $$UX&#x3D;L^{-1}B&#x3D;Y\(TRSM)$$<br> $$X&#x3D;U^{-1}(L^{-1}B)\(TRSM)$$  </p>
 <ul>
-<li>为什么A要分解为LU？  本质是Gauss消元法。<br>$$A &#x3D; \begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}&amp;a_{14}&amp;a_{15}\a_{21}&amp;a_{22}&amp;a_{23}&amp;a_{24}&amp;a_{25}\a_{31}&amp;a_{32}&amp;a_{33}&amp;a_{34}&amp;a_{35}\a_{41}&amp;a_{42}&amp;a_{43}&amp;a_{44}&amp;a_{45}\a_{51}&amp;a_{52}&amp;a_{53}&amp;a_{54}&amp;a_{55}\end{bmatrix}L &#x3D; \begin{bmatrix}1&amp;0&amp;0&amp;0&amp;0\l_{21}&amp;1&amp;0&amp;0&amp;0\l_{31}&amp;l_{32}&amp;1&amp;0&amp;0\l_{41}&amp;l_{42}&amp;l_{43}&amp;1&amp;0\l_{51}&amp;l_{52}&amp;l_{53}&amp;l_{54}&amp;1\end{bmatrix}U &#x3D; \begin{bmatrix}u_{11}&amp;u_{12}&amp;u_{13}&amp;u_{14}&amp;u_{15}\0&amp;u_{22}&amp;u_{23}&amp;u_{24}&amp;u_{25}\0&amp;0&amp;u_{33}&amp;u_{34}&amp;u_{35}\0&amp;0&amp;0&amp;u_{44}&amp;u_{45}\0&amp;0&amp;0&amp;0&amp;u_{55}\end{bmatrix}$$<br>$$\begin{bmatrix}1&amp;0&amp;0&amp;0&amp;0\l_{21}&amp;1&amp;0&amp;0&amp;0\l_{31}&amp;l_{32}&amp;1&amp;0&amp;0\l_{41}&amp;l_{42}&amp;l_{43}&amp;1&amp;0\l_{51}&amp;l_{52}&amp;l_{53}&amp;l_{54}&amp;1\end{bmatrix}*\begin{bmatrix}y_1\y_2\y_3\y_4\y_5\end{bmatrix}&#x3D;\begin{bmatrix}b_{1}\b_{2}\b_{3}\b_{4}\b_{5}\end{bmatrix}$$<br>$$\begin{bmatrix}u_{11}&amp;u_{12}&amp;u_{13}&amp;u_{14}&amp;u_{15}\0&amp;u_{22}&amp;u_{23}&amp;u_{24}&amp;u_{25}\0&amp;0&amp;u_{33}&amp;u_{34}&amp;u_{35}\0&amp;0&amp;0&amp;u_{44}&amp;u_{45}\0&amp;0&amp;0&amp;0&amp;u_{55}\end{bmatrix}*\begin{bmatrix}x_1\x_2\x_3\x_4\x_5\end{bmatrix}&#x3D;\begin{bmatrix}y_{1}\y_{2}\y_{3}\y_{4}\y_{5}\end{bmatrix}$$  </li>
+<li>为什么A要分解为LU？  本质是Gauss消元法。<br> $$A &#x3D; \begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}&amp;a_{14}&amp;a_{15}\a_{21}&amp;a_{22}&amp;a_{23}&amp;a_{24}&amp;a_{25}\a_{31}&amp;a_{32}&amp;a_{33}&amp;a_{34}&amp;a_{35}\a_{41}&amp;a_{42}&amp;a_{43}&amp;a_{44}&amp;a_{45}\a_{51}&amp;a_{52}&amp;a_{53}&amp;a_{54}&amp;a_{55}\end{bmatrix}L &#x3D; \begin{bmatrix}1&amp;0&amp;0&amp;0&amp;0\l_{21}&amp;1&amp;0&amp;0&amp;0\l_{31}&amp;l_{32}&amp;1&amp;0&amp;0\l_{41}&amp;l_{42}&amp;l_{43}&amp;1&amp;0\l_{51}&amp;l_{52}&amp;l_{53}&amp;l_{54}&amp;1\end{bmatrix}U &#x3D; \begin{bmatrix}u_{11}&amp;u_{12}&amp;u_{13}&amp;u_{14}&amp;u_{15}\0&amp;u_{22}&amp;u_{23}&amp;u_{24}&amp;u_{25}\0&amp;0&amp;u_{33}&amp;u_{34}&amp;u_{35}\0&amp;0&amp;0&amp;u_{44}&amp;u_{45}\0&amp;0&amp;0&amp;0&amp;u_{55}\end{bmatrix}$$<br>$$\begin{bmatrix}1&amp;0&amp;0&amp;0&amp;0\l_{21}&amp;1&amp;0&amp;0&amp;0\l_{31}&amp;l_{32}&amp;1&amp;0&amp;0\l_{41}&amp;l_{42}&amp;l_{43}&amp;1&amp;0\l_{51}&amp;l_{52}&amp;l_{53}&amp;l_{54}&amp;1\end{bmatrix}*\begin{bmatrix}y_1\y_2\y_3\y_4\y_5\end{bmatrix}&#x3D;\begin{bmatrix}b_{1}\b_{2}\b_{3}\b_{4}\b_{5}\end{bmatrix}$$<br>$$\begin{bmatrix}u_{11}&amp;u_{12}&amp;u_{13}&amp;u_{14}&amp;u_{15}\0&amp;u_{22}&amp;u_{23}&amp;u_{24}&amp;u_{25}\0&amp;0&amp;u_{33}&amp;u_{34}&amp;u_{35}\0&amp;0&amp;0&amp;u_{44}&amp;u_{45}\0&amp;0&amp;0&amp;0&amp;u_{55}\end{bmatrix}*\begin{bmatrix}x_1\x_2\x_3\x_4\x_5\end{bmatrix}&#x3D;\begin{bmatrix}y_{1}\y_{2}\y_{3}\y_{4}\y_{5}\end{bmatrix}$$  </li>
 <li>A一定能分解为上述所示的LU相乘的模式吗？A需要满足什么条件？  </li>
 <li>矩阵左乘向量（行的线性组合）、右乘向量（列的线性组合）的意义？<br>$$\begin{bmatrix}x&amp;y&amp;z\end{bmatrix}<em>\begin{bmatrix}a&amp;b&amp;c\d&amp;e&amp;f\g&amp;h&amp;i\end{bmatrix}&#x3D;x</em>\begin{bmatrix}a&amp;b&amp;c\end{bmatrix}+y<em>\begin{bmatrix}d&amp;e&amp;f\end{bmatrix}+z</em>\begin{bmatrix}g&amp;h&amp;i\end{bmatrix}\（左乘：把矩阵的各行用对应的“系数”线性组合起来了）$$<br>$$\begin{bmatrix}a&amp;b&amp;c\d&amp;e&amp;f\g&amp;h&amp;i\end{bmatrix}*\begin{bmatrix}x\y\z\end{bmatrix}&#x3D;\begin{bmatrix}a\d\g\end{bmatrix}*x+\begin{bmatrix}b\e\h\end{bmatrix}*y+\begin{bmatrix}c\f\i\end{bmatrix}*z\（右乘：把矩阵的各列用对应的“系数”线性组合起来了）$$<br>那么，对矩阵A左乘矩阵，就是对A的行做线性组合</li>
 </ul>
